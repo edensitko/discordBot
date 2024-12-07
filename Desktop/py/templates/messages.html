@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Messages</title>
+    <link rel="stylesheet" href="/static/css.css">
+</head>
+<body>
+    <div class="nav">
+        <h1>Recent Messages</h1>
+        <a href="/">Home</a>
+    </div>
+
+    <div class="container">
+        <h2>Messages from the Last 30 Minutes</h2>
+        {% if messages %}
+            <div class="messages">
+                {% for msg in messages %}
+                    <div class="message">
+                        <p class="content">{{ msg[0] }}</p>
+                        <p class="timestamp">Sent at: {{ msg[1] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-messages">No recent messages found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent Successfully!</title>
+    <link rel="stylesheet" href="/static/css.css">
+    <script>
+        // Redirect to home page after 3 seconds
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 3000);
+
+        // Function to go back to the home page immediately
+        function goToHomePage() {
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <h1>Message Sent Successfully!</h1>
+    </div>
+
+    <div class="container">
+        <p class="p1">Your message was sent successfully.</p>
+        <p class="p1">You will be redirected to the home page in <span id="countdown">3</span> seconds...</p>
+        <button class="redirect-button" onclick="goToHomePage()">Go to Home Page Now</button>
+    </div>
+
+    <script>
+        let countdown = 3;
+        const countdownElement = document.getElementById('countdown');
+        setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+        }, 1000);
+    </script>
+</body>
+</html>
